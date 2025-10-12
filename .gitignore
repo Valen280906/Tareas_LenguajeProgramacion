@@ -1,3 +1,0 @@
-echo bin/ > .gitignore
-echo *.exe >> .gitignore
-echo *.json >> .gitignore
