@@ -1,0 +1,12 @@
+C:\Users\Valentina\Desktop\Materias\Lenguajes de programacion\Tareas_LenguajeProgramacion\tareas_rust\target\debug\deps\serde-ba57a9c6be3a2dc8.d: C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\Valentina\Desktop\Materias\Lenguajes\ de\ programacion\Tareas_LenguajeProgramacion\tareas_rust\target\debug\build\serde-15a02bf4066364b5\out/private.rs
+
+C:\Users\Valentina\Desktop\Materias\Lenguajes de programacion\Tareas_LenguajeProgramacion\tareas_rust\target\debug\deps\libserde-ba57a9c6be3a2dc8.rmeta: C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs C:\Users\Valentina\Desktop\Materias\Lenguajes\ de\ programacion\Tareas_LenguajeProgramacion\tareas_rust\target\debug\build\serde-15a02bf4066364b5\out/private.rs
+
+C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs:
+C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs:
+C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs:
+C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:
+C:\Users\Valentina\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs:
+C:\Users\Valentina\Desktop\Materias\Lenguajes\ de\ programacion\Tareas_LenguajeProgramacion\tareas_rust\target\debug\build\serde-15a02bf4066364b5\out/private.rs:
+
+# env-dep:OUT_DIR=C:\\Users\\Valentina\\Desktop\\Materias\\Lenguajes de programacion\\Tareas_LenguajeProgramacion\\tareas_rust\\target\\debug\\build\\serde-15a02bf4066364b5\\out
