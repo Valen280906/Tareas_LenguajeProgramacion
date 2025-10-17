@@ -7,18 +7,18 @@ pub enum Estado {
     Pendiente,
     EnProgreso,
     Completada,
-    Cancelada,
+    Cancelada(Option<String>), // puede tener una razón opcional
 }
 
 impl fmt::Display for Estado {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        let texto = match self {
-            Estado::Pendiente => "Pendiente",
-            Estado::EnProgreso => "En progreso",
-            Estado::Completada => "Completada",
-            Estado::Cancelada => "Cancelada",
-        };
-        write!(f, "{}", texto)
+        match self {
+            Estado::Pendiente => write!(f, "Pendiente"),
+            Estado::EnProgreso => write!(f, "En progreso"),
+            Estado::Completada => write!(f, "Completada"),
+            Estado::Cancelada(Some(razon)) => write!(f, "Cancelada ({})", razon),
+            Estado::Cancelada(None) => write!(f, "Cancelada"),
+        }
     }
 }
 
@@ -28,7 +28,7 @@ pub struct Tarea {
     pub titulo: String,
     pub descripcion: String,
     pub estado: Estado,
-    pub fecha: u64, // guardamos timestamp
+    pub fecha: u64, // timestamp en segundos
 }
 
 impl Tarea {
