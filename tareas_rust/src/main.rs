@@ -25,11 +25,11 @@ fn main() {
     let mut gestor = GestorTareas::nuevo();
     let mut args_iter = env::args().skip(1).peekable();
 
-    // Verificamos si hay argumentos sin clonarlo
+    
     if args_iter.peek().is_none() {
 
 
-        // Modo REPL simple
+        
         let mut reader = String::new();
         println!("=== SISTEMA DE GESTIÓN DE TAREAS (Rust CLI) ===");
         print_help();
@@ -143,7 +143,6 @@ fn main() {
                 "ayuda" | "help" => print_help(),
                 "salir" => {
                     println!("Guardando cambios y saliendo del gestor de tareas...");
-                    // Guardamos antes de salir
                     if let Err(e) = crate::commands::persistencia::guardar_tareas_json(&gestor.tareas) {
                         println!("Warning: no se pudo guardar: {}", e);
                     }
@@ -153,7 +152,84 @@ fn main() {
             }
         }
     } else {
-        // Si se pasaron args posicionales, podrías implementar modo no interactivo.
-        println!("Modo no interactivo no implementado en este ejemplo. Ejecuta sin argumentos para entrar al REPL.");
+        let args: Vec<String> = env::args().skip(1).collect();
+
+        let comando = args[0].to_lowercase();
+        match comando.as_str() {
+            "agregar" => {
+                if args.len() < 3 {
+                    eprintln!("Uso: agregar <título> <descripción>");
+                    return;
+                }
+                let titulo = &args[1];
+                let desc = &args[2];
+                if let Err(e) = agregar::agregar(&mut gestor, titulo, desc) {
+                    eprintln!("Error: {}", e);
+                }
+            }
+
+            "listar" | "list" => {
+                if args.len() == 2 {
+                    listar::listar_por_estado(&gestor, &args[1]);
+                } else {
+                    listar::listar(&gestor);
+                }
+            }
+
+            "enprogreso" => {
+                if args.len() < 2 {
+                    eprintln!("Uso: enprogreso <id>");
+                    return;
+                }
+                let id: i32 = args[1].parse().unwrap_or_else(|_| {
+                    eprintln!("ID inválido");
+                    std::process::exit(1);
+                });
+                if let Err(e) = cambiar_estado::cambiar_estado(&mut gestor, id, Estado::EnProgreso) {
+                    eprintln!("Error: {}", e);
+                }
+            }
+
+            "completar" => {
+                if args.len() < 2 {
+                    eprintln!("Uso: completar <id>");
+                    return;
+                }
+                let id: i32 = args[1].parse().unwrap_or_else(|_| {
+                    eprintln!("ID inválido");
+                    std::process::exit(1);
+                });
+                if let Err(e) = cambiar_estado::cambiar_estado(&mut gestor, id, Estado::Completada) {
+                    eprintln!("Error: {}", e);
+                }
+            }
+
+            "eliminar" => {
+                if args.len() < 2 {
+                    eprintln!("Uso: eliminar <id> o eliminar todo");
+                    return;
+                }
+                if args[1].to_lowercase() == "todo" {
+                    if let Err(e) = eliminar::eliminar_todas_las_tareas(&mut gestor) {
+                        eprintln!("Error: {}", e);
+                    }
+                } else {
+                    let id: i32 = args[1].parse().unwrap_or_else(|_| {
+                        eprintln!("ID inválido");
+                        std::process::exit(1);
+                    });
+                    if let Err(e) = eliminar::eliminar_tarea(&mut gestor, id) {
+                        eprintln!("Error: {}", e);
+                    }
+                }
+            }
+
+            "ayuda" | "help" => print_help(),
+
+            _ => {
+                eprintln!("Comando no reconocido. Escribe 'ayuda' para ver las opciones.");
+            }
+        }
     }
+
 }

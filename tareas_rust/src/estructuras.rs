@@ -7,7 +7,7 @@ pub enum Estado {
     Pendiente,
     EnProgreso,
     Completada,
-    Cancelada(Option<String>), // puede tener una razón opcional
+    Cancelada(Option<String>), 
 }
 
 impl fmt::Display for Estado {
@@ -28,7 +28,7 @@ pub struct Tarea {
     pub titulo: String,
     pub descripcion: String,
     pub estado: Estado,
-    pub fecha: u64, // timestamp en segundos
+    pub fecha: u64,
 }
 
 impl Tarea {

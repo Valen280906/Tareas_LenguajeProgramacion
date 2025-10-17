@@ -20,7 +20,7 @@ impl GestorTareas {
                 GestorTareas { tareas, next_id }
             }
             Err(e) => {
-                eprintln!("⚠️ No se pudo cargar el archivo JSON: {}. Se inicia vacío.", e);
+                eprintln!("No se pudo cargar el archivo JSON: {}. Se inicia vacío.", e);
                 GestorTareas {
                     tareas: Vec::new(),
                     next_id: 1,
