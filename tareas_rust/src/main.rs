@@ -11,7 +11,7 @@ fn print_help() {
     println!("Comandos disponibles:");
     println!("- agregar <título> | <descripción>");
     println!("- listar");
-    println!("- list <filtro>   (filtros: todo, in-progress, done)");
+    println!("- list <filtro>   (filtros: todo, en progreso, completo)");
     println!("- enprogreso <id>");
     println!("- completar <id>");
     println!("- cancelar <id> [razón opcional]");

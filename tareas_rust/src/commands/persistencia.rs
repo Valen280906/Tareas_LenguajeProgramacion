@@ -1,6 +1,8 @@
 use std::fs::{File, OpenOptions};
 use std::io::{Read, Write};
 use std::path::Path;
+use std::path::PathBuf;
+
 use crate::estructuras::Tarea;
 
 const ARCHIVO_TAREAS: &str = "tareas.json";
@@ -45,4 +47,33 @@ pub fn cargar_tareas_json() -> Result<Vec<Tarea>, String> {
         Ok(tareas) => Ok(tareas),
         Err(e) => Err(format!("Error al parsear JSON: {}", e)),
     }
+}
+
+
+pub fn guardar_tareas_json_con_ruta(tareas: &Vec<Tarea>, archivo: &PathBuf) -> Result<(), String> {
+    match serde_json::to_string_pretty(tareas) {
+        Ok(json) => {
+            match File::create(archivo) {
+                Ok(mut f) => f.write_all(json.as_bytes()).map_err(|e| e.to_string()),
+                Err(e) => Err(format!("Error al crear archivo {}: {}", archivo.display(), e)),
+            }
+        }
+        Err(e) => Err(format!("Error al serializar JSON: {}", e)),
+    }
+}
+
+pub fn cargar_tareas_json_con_ruta(archivo: &PathBuf) -> Result<Vec<Tarea>, String> {
+    if !archivo.exists() {
+        return Err("Archivo no encontrado".to_string());
+    }
+
+    let mut contenido = String::new();
+    let mut f = OpenOptions::new().read(true).open(archivo).map_err(|e| e.to_string())?;
+    f.read_to_string(&mut contenido).map_err(|e| e.to_string())?;
+
+    if contenido.trim().is_empty() {
+        return Ok(Vec::new());
+    }
+
+    serde_json::from_str(&contenido).map_err(|e| e.to_string())
 }
