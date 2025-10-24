@@ -16,7 +16,7 @@ impl GestorTareas {
                 } else {
                     tareas.iter().map(|t| t.id).max().unwrap_or(0) + 1
                 };
-                println!("✅ Tareas cargadas desde JSON. Total: {}", tareas.len());
+                println!("Tareas cargadas desde JSON. Total: {}", tareas.len());
                 GestorTareas { tareas, next_id }
             }
             Err(e) => {
@@ -28,8 +28,4 @@ impl GestorTareas {
             }
         }
     }
-
-    pub fn tareas(&self) -> &Vec<Tarea> {
-        &self.tareas
-    }
-}
+} 
