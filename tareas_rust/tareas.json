@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "id": 1,
+    "titulo": "Título",
+    "descripcion": "Descripción",
+    "estado": "Completada",
+    "fecha": 1761344103
+  },
+  {
+    "id": 2,
+    "titulo": "tarea1",
+    "descripcion": "tarea1",
+    "estado": "Pendiente",
+    "fecha": 1761344203
+  }
+]

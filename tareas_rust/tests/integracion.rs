@@ -10,7 +10,7 @@ fn preparar_entorno_prueba(nombre: &str) -> PathBuf {
     let tmp = NamedTempFile::new().expect("No se pudo crear archivo temporal");
     let ruta = tmp.into_temp_path().to_path_buf();
 
-    println!("🧪 Archivo temporal creado para '{}': {:?}", nombre, ruta);
+    println!("Archivo temporal creado para '{}': {:?}", nombre, ruta);
     ruta
 }
 
