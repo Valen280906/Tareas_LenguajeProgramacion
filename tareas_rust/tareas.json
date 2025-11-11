@@ -1,16 +1,30 @@
 [
   {
     "id": 1,
-    "titulo": "Título",
-    "descripcion": "Descripción",
+    "titulo": "Probar test",
+    "descripcion": "Verificar funcionamiento",
     "estado": "Completada",
-    "fecha": 1761344103
+    "fecha": 1761996130
   },
   {
     "id": 2,
-    "titulo": "tarea1",
-    "descripcion": "tarea1",
+    "titulo": "tarea2",
+    "descripcion": "tarea2",
+    "estado": "Completada",
+    "fecha": 1761996465
+  },
+  {
+    "id": 3,
+    "titulo": "Estudiar Rust",
+    "descripcion": "Leer sobre ownership",
     "estado": "Pendiente",
-    "fecha": 1761344203
+    "fecha": 1761999130
+  },
+  {
+    "id": 4,
+    "titulo": "Tarea4",
+    "descripcion": "Tarea4",
+    "estado": "Pendiente",
+    "fecha": 1761999257
   }
 ]

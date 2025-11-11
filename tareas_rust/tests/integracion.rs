@@ -24,7 +24,7 @@ fn test_agregar_tarea() {
     assert_eq!(gestor.tareas.len(), 1);
 
     let tarea = &gestor.tareas[0];
-    assert_eq!(tarea.titulo, "Probar test");
+    assert_eq!(tarea.titulo, "Tarea1");
     assert!(matches!(tarea.estado, Estado::Pendiente));
 
     persistencia::guardar_tareas_json_con_ruta(&gestor.tareas, &archivo).unwrap();
