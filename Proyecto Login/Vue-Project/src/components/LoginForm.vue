@@ -17,7 +17,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, defineEmits } from "vue";
+import { ref, onMounted} from "vue";
 const emit = defineEmits(["login-success"]);
 
 const username = ref("");

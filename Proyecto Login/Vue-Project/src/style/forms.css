@@ -9,6 +9,17 @@
   color: #222;
   animation: fadeIn 0.4s ease;
 }
+.welcome-container{
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  width: 380px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  color: #222;
+  animation: fadeIn 0.4s ease;
+  
+}
 
 @keyframes fadeIn {
   from {
@@ -89,4 +100,25 @@ button:hover {
   width: 16px;
   height: 16px;
   cursor: pointer;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #42b983;
+  color: white;
+  padding: 0.9rem 1.4rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-weight: 500;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
 }

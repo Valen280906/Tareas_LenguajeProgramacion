@@ -23,5 +23,17 @@
     "username": "aki1",
     "email": "aki1@gmail.com",
     "password": "valen2809"
+  },
+  {
+    "username": "maria",
+    "email": "maria@gmail.com",
+    "password": "$2b$10$31TS2LJFLT6PqxDCdrYgrOPj/DPSh/XDIW87sV.Yxs0yuVBZlPsTO",
+    "fecha": "2025-11-13T14:45:49.168Z"
+  },
+  {
+    "username": "jose",
+    "email": "ale@gmail.com",
+    "password": "$2b$10$yyB9ALFOLRcnjAQE.UXDVOqxVU796W5APWq7P632FD45LDkzGlilG",
+    "fecha": "2025-11-13T15:06:23.719Z"
   }
 ]

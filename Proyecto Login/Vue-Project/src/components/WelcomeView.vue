@@ -8,14 +8,14 @@
 </template>
 
 <script setup>
-    import { defineProps } from 'vue';
+const props = defineProps({
+  user: Object
+});
 
-    const props = defineProps({
-        user:Object
-    });
+const emit = defineEmits(["logout"]);
 
-    function logout(){
-        localStorage.removeItem("loggedUser");
-        window.location.reload();
-    }
+function logout() {
+  localStorage.removeItem("loggedUser");
+  emit("logout");
+}
 </script>

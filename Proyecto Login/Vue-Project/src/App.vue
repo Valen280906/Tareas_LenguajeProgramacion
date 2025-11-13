@@ -1,7 +1,16 @@
 <template>
   <div class="app-container">
     <transition name="fade" mode="out-in">
-      <component :is="currentView" :user="loggedUser" @login-success="onLoginSuccess" />
+      <component 
+        :is="currentView" 
+        :user="loggedUser" 
+        @login-success="onLoginSuccess" 
+        @logout="onLogout" 
+      />
+    </transition>
+
+    <transition name="fade">
+      <div v-if="logoutMessage" class="toast">{{ logoutMessage }}</div>
     </transition>
 
     <div v-if="!loggedUser" class="switch-container">
@@ -27,6 +36,8 @@ import "./style/forms.css";
 
 const activeForm = ref("LoginForm");
 const loggedUser = ref(null);
+const logoutMessage = ref("");
+
 
 onMounted(() => {
   const sessionUser = localStorage.getItem("loggedUser");
@@ -43,5 +54,14 @@ const currentView = computed(() => {
 function onLoginSuccess(user) {
   loggedUser.value = user;
   localStorage.setItem("loggedUser", JSON.stringify(user));
+}
+
+function onLogout() {
+  loggedUser.value = null;
+  logoutMessage.value = "Sesión cerrada correctamente";
+
+  setTimeout(() => {
+    logoutMessage.value = "";
+  }, 3000);
 }
 </script>
