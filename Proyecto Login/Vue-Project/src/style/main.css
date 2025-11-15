@@ -32,3 +32,12 @@ body {
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
   text-align: center;
 }
+#app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html, body {
+  height: 100%;
+}

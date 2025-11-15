@@ -25,6 +25,33 @@ app.post("/register", async (req, res) => {
   if (!username || !email || !password)
     return res.status(400).json({ message: "Todos los campos son obligatorios." });
 
+  const usernameRegex = /^[A-Za-z][A-Za-z0-9._]{3,}$/;
+
+  if (!usernameRegex.test(username)) {
+    return res.status(400).json({
+      message:
+        "El usuario debe iniciar con letra, tener al menos 4 caracteres y solo usar letras, números, punto o guion bajo."
+    });
+  }
+
+  const regexMayuscula = /[A-Z]/;
+  const regexEspecial = /[!@#$%^&*(),.?":{}|<>]/;
+
+  if (password.length < 8 ||
+      !regexMayuscula.test(password) ||
+      !regexEspecial.test(password)
+  ) {
+    return res.status(400).json({
+      message: "La contraseña debe tener mínimo 8 caracteres, 1 mayúscula y 1 carácter especial."
+    });
+  }
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ message: "Correo electrónico no válido." });
+  }
+
+
   const users = leerUsuarios();
 
   const existe = users.find(
@@ -33,16 +60,20 @@ app.post("/register", async (req, res) => {
   if (existe)
     return res.status(400).json({ message: "Usuario o correo ya registrado." });
 
-  if (password.length < 6)
-    return res.status(400).json({ message: "La contraseña debe tener al menos 6 caracteres." });
-
   const hash = await bcrypt.hash(password, 10);
 
-  users.push({ username, email, password: hash, fecha: new Date().toISOString() });
+  users.push({
+    username,
+    email,
+    password: hash,
+    fecha: new Date().toISOString()
+  });
+
   guardarUsuarios(users);
 
   res.json({ message: "Registro exitoso. Ahora puedes iniciar sesión." });
 });
+
 
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;

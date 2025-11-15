@@ -35,5 +35,29 @@
     "email": "ale@gmail.com",
     "password": "$2b$10$yyB9ALFOLRcnjAQE.UXDVOqxVU796W5APWq7P632FD45LDkzGlilG",
     "fecha": "2025-11-13T15:06:23.719Z"
+  },
+  {
+    "username": "vm23",
+    "email": "vcorreo@gmail.com",
+    "password": "$2b$10$.RR5xmwf0T7vWtaE/zDq6eHIe3VGNqcFqqxhBmsCYe8PMs1wQrcuS",
+    "fecha": "2025-11-14T23:47:52.084Z"
+  },
+  {
+    "username": "andrea",
+    "email": "andrea@gmail.com",
+    "password": "$2b$10$SQ65ugzqJmVCwERgbhxAY.0KtmNQxgb/qMHmhztS4gWODzLlsk196",
+    "fecha": "2025-11-15T00:02:44.524Z"
+  },
+  {
+    "username": "fernan",
+    "email": "fernan@gmail.com",
+    "password": "$2b$10$G74rfx/aYJ4hj1DmgoPJ0.1kpJBmVyceuemk0jjitKEpbCPTb8Ls2",
+    "fecha": "2025-11-15T02:48:28.139Z"
+  },
+  {
+    "username": "ala",
+    "email": "ala@gmail.com",
+    "password": "$2b$10$BB4aq1NgcP3kR0T8O4yd.OiMdo4v9cRXc7vseyhaRzNwsqJ2bD5Ga",
+    "fecha": "2025-11-15T02:51:42.645Z"
   }
 ]
